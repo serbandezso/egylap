@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spirituális útmutató a belső kastély útján - kvantum-szövetség, átadás, és misztikus hit">
+    <meta name="keywords" content="spiritualitás, belső kastély, kvantum, hit, átadás, misztika, érzelmi puszta">
+    <meta name="description" content="Nem új vallás, nem új rendszer. Csak ébresztő: a keret soha nem a kép. A tutaj nem a part.">
+    <title>Magvető - A Belső Kastély Útja</title>
+    <style>
+        /* Alapstílusok */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2c3e2c;
+            --secondary-green: #5a715a;
+            --light-green: #7d8c7d;
+            --accent-green: #8a9b8a;
+            --background: #fefdf8;
+            --light-bg: #f9f7f1;
+            --border-color: #e8e4d8;
+            --text-color: #2c3e2c;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.03"><path d="M50,5 C70,5 95,25 95,50 C95,75 70,95 50,95 C30,95 5,75 5,50 C5,25 30,5 50,5 Z" fill="none" stroke="%232c3e2c" stroke-width="1"/></svg>');
+            padding: 1rem;
+            font-size: 18px;
+            transition: opacity 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: rgba(254, 253, 248, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Fejléc */
+        header {
+            text-align: center;
+            padding: 1rem 0 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo-image {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 1rem;
+            filter: grayscale(30%) contrast(120%);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+            color: var(--secondary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: var(--light-green);
+            font-size: 1.1rem;
+        }
+
+        /* Navigáció */
+        nav {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-green);
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-green);
+            background-color: var(--light-bg);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--secondary-green);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 80%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--secondary-green);
+            color: var(--secondary-green);
+            padding: 0.8rem 1.2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 0 auto;
+            min-height: 44px;
+        }
+
+        /* Fő tartalom */
+        main {
+            padding: 3rem 0;
+            min-height: 60vh;
+        }
+
+        .page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+
+        .page.active {
+            display: block;
+            opacity: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Kezdőoldal */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .hero-question {
+            font-size: 1.8rem;
+            line-height: 1.4;
+            margin-bottom: 3rem;
+            color: var(--primary-green);
+            font-weight: normal;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .enter-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: transparent;
+            color: var(--secondary-green);
+            text-decoration: none;
+            border: 1px solid var(--secondary-green);
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            min-height: 44px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .enter-btn:hover {
+            background-color: var(--secondary-green);
+            color: var(--background);
+            transform: translateY(-2px);
+        }
+
+.disclaimer-box {
+    background: #f5f2ea;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    border: 2px dashed var(--secondary-green);
+    text-align: center;
+}
+
+.disclaimer-box h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+        /* Általános tartalmi elemek */
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-green);
+            font-weight: normal;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            color: var(--secondary-green);
+            font-weight: normal;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+            color: var(--secondary-green);
+            font-weight: normal;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 3px solid var(--border-color);
+            background-color: var(--light-bg);
+        }
+
+        .bible-verse {
+            font-style: italic;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 3px solid var(--accent-green);
+            background-color: #f5f2ea;
+            color: var(--secondary-green);
+            font-size: 1.1rem;
+        }
+
+        .story-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        /* Új stílusok a kozmikus csomók oldalhoz */
+        .cosmic-knots {
+            background: linear-gradient(135deg, #e8e4d8 0%, #d6d2c4 100%);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            border: 1px solid #c8c4b8;
+            position: relative;
+        }
+
+        .cosmic-knots::before {
+            content: '🌀';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2rem;
+            background: var(--background);
+            padding: 0 10px;
+        }
+
+        /* Kérdések oldal */
+        .question {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--light-bg);
+            border-radius: 5px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Csend oldal */
+        .silence-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+            text-align: center;
+        }
+
+        .silence-symbol {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-green);
+            opacity: 0.7;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+            100% { opacity: 0.5; transform: scale(1); }
+        }
+
+        /* Lábléc */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--light-green);
+            font-size: 0.9rem;
+        }
+
+        /* Sikem és Dina speciális stílusok */
+        .contrast-box {
+            background-color: #f5f2ea;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contrast-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .contrast-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .physical, .spiritual {
+            flex: 1;
+            padding: 0 1rem;
+        }
+
+        .physical {
+            border-right: 1px solid var(--border-color);
+        }
+
+        .physical h3, .spiritual h3 {
+            color: var(--secondary-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: normal;
+        }
+
+        .symbol {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            color: #a8b8a8;
+        }
+
+        .conclusion {
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--secondary-green);
+            border: 1px dashed #a8b8a8;
+        }
+
+        /* Belső Kastély speciális stílusok */
+        .castle-section {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #f5f2ea 100%);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .castle-section::before {
+            content: '🏰';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2rem;
+            background: var(--background);
+            padding: 0 10px;
+        }
+
+        .lodging {
+            display: flex;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #a8b8a8;
+            transition: transform 0.3s;
+        }
+
+        .lodging:hover {
+            transform: translateX(5px);
+        }
+
+        .lodging-number {
+            font-size: 2rem;
+            color: var(--secondary-green);
+            margin-right: 1.5rem;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .lodging-content {
+            flex: 1;
+        }
+
+        .lodging-title {
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .lodging.first-three {
+            border-left-color: var(--accent-green);
+            background: var(--light-bg);
+        }
+
+        .lodging.fourth-plus {
+            border-left-color: var(--secondary-green);
+            background: #f0ede4;
+        }
+
+        .transition-point {
+            text-align: center;
+            padding: 2rem;
+            margin: 2rem 0;
+            background: #f5f2ea;
+            border-radius: 8px;
+            border: 2px dashed #a8b8a8;
+        }
+
+        /* Jézus tanításai speciális stílusok */
+        .jesus-teachings {
+            background: linear-gradient(135deg, #f0ede4 0%, #e8e4d8 100%);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            border: 1px solid #d6d2c4;
+            position: relative;
+        }
+
+        .jesus-teachings::before {
+            content: '✝';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 1.8rem;
+            background: var(--background);
+            padding: 0 10px;
+            color: var(--secondary-green);
+        }
+
+        .teaching-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.7);
+            border-radius: 6px;
+            transition: transform 0.3s;
+        }
+
+        .teaching-point:hover {
+            transform: translateY(-2px);
+        }
+
+        .teaching-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--secondary-green);
+            min-width: 30px;
+        }
+        
+        /* A Csend Válaszai stílusok */
+.dialogue-container {
+    padding: 2rem 0;
+}
+
+.dialogue {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-green);
+}
+
+.person {
+    font-weight: bold;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+}
+
+.divider {
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--light-green);
+    font-size: 1.5rem;
+}
+
+/* KS Kvantum-Szövetség stílusok */
+.ks-hero {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.ks-title {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+.ks-subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-green);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.ks-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-green);
+}
+
+.ks-section-title {
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.ks-invitation {
+    text-align: center;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #f5f2ea 0%, #e8e4d8 100%);
+    border-radius: 12px;
+    margin: 2.5rem 0;
+    border: 1px solid var(--border-color);
+}
+
+.ks-invitation-title {
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+}
+
+.ks-invitation-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.ks-cta {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: var(--secondary-green);
+    text-decoration: none;
+    border: 1px solid var(--secondary-green);
+    border-radius: 30px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.ks-cta:hover {
+    background-color: var(--secondary-green);
+    color: var(--background);
+    transform: translateY(-2px);
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
+    .dialogue {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .ks-title {
+        font-size: 2rem;
+    }
+    
+    .ks-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .ks-section {
+        padding: 1.5rem;
+    }
+    
+    .ks-invitation {
+        padding: 2rem;
+    }
+    
+    .ks-invitation-title {
+        font-size: 1.5rem;
+    }
+}
+
+        /* Lista stílusok */
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        /* Érzelmi Puszta stílusok */
+        .desert-section {
+            background: linear-gradient(135deg, #f5f2ea 0%, #e8e4d8 100%);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .desert-section::before {
+            content: '🌵';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2rem;
+            background: var(--background);
+            padding: 0 10px;
+        }
+
+        .journey-step {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 6px;
+            border-left: 4px solid #5a715a;
+        }
+
+        .step-number {
+            font-size: 1.5rem;
+            color: #5a715a;
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+
+        .story-card {
+            background: #f5f2ea;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border: 1px solid #e8e4d8;
+        }
+
+        /* Reszponzív design */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+                padding: 0.5rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .logo-image {
+                max-width: 250px;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 1rem 0;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .hero-question {
+                font-size: 1.6rem;
+                line-height: 1.3;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            h4 {
+                font-size: 1.1rem;
+            }
+            
+            p {
+                font-size: 1rem;
+                text-align: left;
+                line-height: 1.6;
+            }
+            
+            .quote, .bible-verse {
+                font-size: 1rem;
+                padding: 1.2rem;
+            }
+            
+            .enter-btn {
+                font-size: 1.1rem;
+                padding: 15px 35px;
+            }
+            
+            .contrast-item {
+                flex-direction: column;
+            }
+            
+            .physical {
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding-bottom: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .contrast-box {
+                padding: 1.5rem;
+            }
+            
+            header {
+                padding: 1rem 0 1rem;
+            }
+            
+            .logo {
+                font-size: 1.6rem;
+            }
+            
+            .lodging, .teaching-point, .journey-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .lodging-number, .teaching-icon, .step-number {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .cosmic-knots,
+            .castle-section,
+            .jesus-teachings,
+            .desert-section {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+        }
+
+        /* Extra kis kijelzőkre */
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px;
+                padding: 0.25rem;
+            }
+            
+            .container {
+                padding: 0.8rem;
+            }
+            
+            .logo-image {
+                max-width: 200px;
+            }
+            
+            .hero-question {
+                font-size: 1.4rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .silence-symbol {
+                font-size: 3rem;
+            }
+        }
+
+        /* Prefers reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Fókusz stílusok a billentyűzet navigációhoz */
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--secondary-green);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <!-- A logó kép helye -->
+                <img src="logo.jpg" alt="KVANTUM SZÖVETSÉG" class="logo-image">
+                <h1 class="logo">Magvető</h1>
+                <p class="subtitle">A Belső Kastély Útja - Ahol a magok csendje szól</p>
+            </div>
+        </header>
+
+        <nav aria-label="Fő navigáció">
+            <button class="mobile-menu-btn" aria-expanded="false" aria-controls="nav-links">
+                Menü ≡
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#" onclick="showPage('home')" aria-current="page">Kezdőlap</a></li>
+                <li><a href="#" onclick="showPage('ks')">Élő kapcsolat</a></li>
+                <li><a href="#" onclick="showPage('quantum-covenant')">Kvantum-Szövetség</a></li>
+                <li><a href="#" onclick="showPage('surrender')">Az Átadás</a></li>
+                <li><a href="#" onclick="showPage('mag')">A Mag</a></li>
+                <li><a href="#" onclick="showPage('jesus')">Jézus Tanítása</a></li>
+                <li><a href="#" onclick="showPage('castle')">A Kastély</a></li>
+                <li><a href="#" onclick="showPage('cosmic-knots')">Kozmikus Csomók</a></li>
+                <li><a href="#" onclick="showPage('desert')">Érzelmi Puszta</a></li>
+                <li><a href="#" onclick="showPage('stories')">Történetek</a></li>
+                <li><a href="#" onclick="showPage('questions')">Kérdések</a></li>
+                <li><a href="#" onclick="showPage('silence-dialogues')">A Csend Válaszai</a></li>
+                <li><a href="#" onclick="showPage('silence')">Csend</a></li>
+                <li><a href="#raft" onclick="showPage('raft'); return false;">A Tutaj Nem a Part</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- Kezdőoldal -->
+            <div id="home" class="page active">
+                <div class="hero">
+                    <p class="hero-question">
+                        "Mi van, ha minden rendszer, ami Istenhez vezet...<br>
+                        ...csak mutat arra, aki már itt van?"
+                    </p>
+                </div>
+                
+                <div class="quote">
+                    "Ez az oldal nem akar semmit helyettesíteni.<br>
+                    Csak ébreszt."
+                </div>
+                
+                <div class="disclaimer-box">
+                    <h3>Nem Útmutató – Hanem Ébresztő</h3>
+                    <p>Mózes törvényei, Jézus tanításai, a szentírások – mind keretek, amik segítenek talpra állni. 
+                    De amikor a keret bálvánnyá válik, elfedi, aki mutatna rajta át.</p>
+                    <p>Itt nincs új rendszer. Csak emlékeztető: <strong>a tutaj nem a part.</strong></p>
+                </div>
+                
+                <p>Ha te is úgy érzed, hogy más vagy, mint a többiek...</p>
+                <p>Ha nehezebben érted az érzelmeket, de mélyebben érzed a Lelket...</p>
+                <p>Ha néha úgy érzed, mintha más nyelven beszélnél, mint a körülötted lévők...</p>
+                
+                <p>Akkor talán a te utad is ide vezet.</p>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="enter-btn" onclick="showPage('ks')">Belépés a térbe</a>
+                </div>
+            </div>
+
+            <!-- KS oldal -->
+            <div id="ks" class="page">
+                <div class="ks-hero">
+                    <h1 class="ks-title">Élő kapcsolat</h1>
+                    <p class="ks-subtitle">Kvantum–Szövetség</p>
+                    <p>Az élő kapcsolat emlékezete — amely nem rendszert kínál, hanem meghívást.</p>
+                </div>
+
+                <div class="ks-section">
+                    <h2 class="ks-section-title">A Forrás</h2>
+                    <p>Ez az oldal nem új vallás, nem új tanítás. Csak ébresztés: emlékeztető arra, hogy Isten nem kívül van, hanem bennünk ébred.</p>
+                    <p>A Forrás nem egy fogalom, hanem tapasztalat. Nem elmélet, hanem jelenlét. Aki lecsendesíti az elméjét, annak szívében feltárul: a Forrás mindig is ott volt.</p>
+                </div>
+
+                <div class="ks-section">
+                    <h2 class="ks-section-title">Az Ébresztés</h2>
+                    <p>A történelem tele van tornyokkal és templomokkal, amelyek az ember dicsőségét hirdették. De minden, amit nem Isten hord, elnémul.</p>
+                    <p>Bábel tornya erről beszél. A közös nyelv, ami széthullott, a szeretet nyelve volt. Amikor a hatalom és a verseny vette át a helyét, az emberek többé nem értették egymást.</p>
+                    <p>Ez az oldal arra hív, hogy visszatérj a szeretet nyelvéhez — ahhoz, ami nem szavakban, hanem jelenlétben szól.</p>
+                </div>
+
+                <div class="ks-section">
+                    <h2 class="ks-section-title">Az Ember Útja</h2>
+                    <p>A test fejlődése csak a kezdet. A valódi evolúció a tudaté — az a folyamat, ahogy felismerjük magunkban az isteni szikrát.</p>
+                    <p>Minden civilizáció, amely a hatalomra épített, végül önmagába omlott. A Forrás soha nem az építményekben, hanem az ember szívében lakozott.</p>
+                    <p>A Szövetség nem kollektív szerződés, hanem személyes kapcsolat. Minden ember egy kapu, amin át Isten újra megmutathatja önmagát.</p>
+                </div>
+
+                <div class="ks-section">
+                    <h2 class="ks-section-title">A Belső Fordulat</h2>
+                    <p>Fiatalon az elmémmel és az érzelmeimmel azonosítottam magam. Ettől az életem hullámzó, sötét és fájdalmas lett. A szenvedés elvezetett a határig.</p>
+                    <p>A meditáció megtanított megfigyelni, de még mindig harcoltam. Aztán egy látomásban a sátán hegyként tornyosult elém, én porszemként álltam vele szemben. Mögöttem Isten. Nem azt mondta: „Harcolj”, hanem: „Bízz bennem.”</p>
+                    <p>A hegy ott maradt, de a félelem eltűnt. Megértettem, hogy nem legyőzni kell a sötétséget, hanem nem hinni benne. Nem a küzdelem, hanem a bizalom nyitotta meg bennem az utat a Forrás felé.</p>
+                </div>
+
+                <div class="ks-section">
+                    <h2 class="ks-section-title">A Szövetség</h2>
+                    <p>A Kvantum–Szövetség nem rendszer, nem vallás, nem tanítás. Csak emlékeztető, hogy a Forrással való kapcsolat nem múlt el, csak feledésbe merült.</p>
+                    <p>Amikor a szív elcsendesedik, újra hallani kezdjük egymást a szeretet nyelvén. Ez a Szövetség kezdete — Isten és ember újra találkozik, nem formában, hanem lélekben.</p>
+                    <p>Nem a mi dolgunk megváltoztatni a világot. Ha azon mesterkedünk, újra a küzdés logikájába esünk — ugyanabba a hatalom‑ és versenyjátékba, amely elválasztotta egymástól az embereket. Hívásunk más: elfogadni a világot úgy, ahogy van, és abban a jelen valóságban megélni Isten szeretetét.</p>
+                    <p>Jézus tanítása szerint nem elsősorban a hatalmi struktúrák vagy a vallási intézmények megdöntése a cél, hanem az, hogy bennük és általuk a jelen pillanatban éljük meg a szövetséget. Nem a forma megváltoztatása az első lépés, hanem a szeretet gyakorlása ott, ahol vagyunk.</p>
+                </div>
+
+                <div class="ks-invitation">
+                    <h3 class="ks-invitation-title">Készülj elcsendesedni</h3>
+                    <p class="ks-invitation-text">Nem tanítás — meghívás</p>
+                    <p>Minden ember egy kapu. Nem vallás, nem rendszer — csupán emlékezés arra, hogy a Forrás nem kívül van, hanem bennünk ébred. Ha megállsz, meghallod.</p>
+                    <a href="#" class="ks-cta" onclick="showPage('silence')">Lépj beljebb</a>
+                </div>
+            </div>
+
+            <!-- A Mag oldal -->
+            <div id="mag" class="page">
+                <h2>A Mag</h2>
+                
+                <div class="quote">
+                    "Nem másokat kell felébresztenem, hanem magamat ébren tartani."
+                </div>
+                
+                <p>
+                    A végleges válasz megnyugtat, de ha beleragadok, elválaszt attól, akit keresek.
+                    A hit nem tudás, hanem mozgás – figyelem Istenre, aki bennem figyel.
+                </p>
+                
+                <p>
+                    Minden kérdés, amit nem zárok le, egy nyitott ablak marad a Lélek felé.
+                    Ha ébren maradok, a jelenlétem önmagában fény – nem kell győznöm, 
+                    nem kell meg győznöm senkit, csak hagynom, hogy Isten mozduljon bennem tovább.
+                </p>
+                
+                <p>
+                    Ahogy a kvantumfizika a szubatomi szinten felismeri, hogy a valóság alapja nem szilárd anyag, hanem rezgés és kapcsolat, úgy a misztikus hit is ugyanebbe a mélységbe lát:
+                    a látható mögött nem a semmi van, hanem az Élő Jelenlét.
+                    Isten nem kívülről formálja a világot, hanem belülről hívja ébredésre a tudatot.
+                </p>
+				
+                <div class="quote">
+                    "Én és Isten, minden más csak díszlet."
+                </div>
+            </div>
+            
+            <!-- A többi oldal kódja változatlan marad -->
+            <!-- Az Átadás Titka, Kvantum-Szövetség, Jézus Tanítása, A Belső Kastély, Kozmikus Csomók, Érzelmi Puszta, Történetek, Kérdések, A Csend Válaszai, Csend, A Tutaj Nem a Part oldalak -->
+            
+        </main>
+
+        <footer>
+            <p>"Nem vagyok útmutató – csak ébresztő. A tutajt ne cipeld a hátadon."</p>
+            <p>"Ha éreztél itt valamit – nem véletlen. Isten veled van a te egyedi utadon is."</p>
+            <p><strong>A vallás, út Istenhez.</strong></p>
+            <div style="margin-top: 1rem; font-size: 0.8rem; color: #7d8c7d;">
+                ⋯
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Oldalváltás funkció
+        function showPage(pageId) {
+            // Elrejtjük az összes oldalt
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Megjelenítjük a kiválasztott oldalt
+            document.getElementById(pageId).classList.add('active');
+            
+            // Frissítjük a navigációs linkek aktív állapotát
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('onclick') === `showPage('${pageId}')`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Mobil menü bezárása
+            document.querySelector('.nav-links').classList.remove('active');
+            document.querySelector('.mobile-menu-btn').setAttribute('aria-expanded', 'false');
+            
+            // Oldal tetejére görbítés
+            window.scrollTo(0, 0);
+        }
+
+        // Kérdések megjelenítése/elrejtése
+        function toggleAnswer(questionElement) {
+            const answer = questionElement.querySelector('.answer');
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                questionElement.style.backgroundColor = '#f5f2ea';
+            } else {
+                answer.style.display = 'none';
+                questionElement.style.backgroundColor = '';
+            }
+        }
+
+        // Mobil menü kezelése
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            navLinks.classList.toggle('active');
+            this.setAttribute('aria-expanded', !isExpanded);
+            this.textContent = isExpanded ? 'Menü ≡' : 'Menü ✕';
+        });
+
+        // Billentyűzet navigáció támogatása
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                // ESC billentyűre bezárjuk a mobil menüt
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.mobile-menu-btn').setAttribute('aria-expanded', 'false');
+                document.querySelector('.mobile-menu-btn').textContent = 'Menü ≡';
+            }
+        });
+
+        // Automatikus kérdések bezárása, ha új oldalra navigálunk
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.answer').forEach(answer => {
+                    answer.style.display = 'none';
+                });
+                document.querySelectorAll('.question').forEach(question => {
+                    question.style.backgroundColor = '';
+                });
+            });
+        });
+
+        // Oldal betöltésekor a kezdőoldal aktív
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
